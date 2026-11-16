@@ -11,7 +11,7 @@ Thai fonts from Google Fonts, SIL Open Font License 1.1 — see `OFL.txt` in tha
 Anuphan, Bai Jamjuree, Chakra Petch, Charmonman, IBM Plex Sans Thai (+ Looped), Itim, Kanit, Mali, Mitr, Pattaya, Pridi, Sarabun, Sriracha.
 
 ## Sample voice (`examples/ai-online-shop/voice/`)
-Generated with ElevenLabs (stock Thai voice from the Voice Library) on a paid plan. For trying the system only.
+Generated with ElevenLabs v3 via OpenRouter (stock Thai voice from the ElevenLabs Voice Library). For trying the system only.
 
 ## Everything else
 `make.mjs`, `clip.sh`, `setup.sh`, `tools/`, `.claude/skills/`, README: MIT License, see `LICENSE`.

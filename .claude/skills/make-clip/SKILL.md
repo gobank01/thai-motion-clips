@@ -57,7 +57,7 @@ node make.mjs --style 25 --story my-clips/<ชื่อ>/story.json --still 10  
 ```bash
 sh clip.sh my-clips/<ชื่อ> 25
 ```
-- ทำเสียงด้วย `tools/voice.py` (ใช้ ElevenLabs ถ้ามี key ใน `.env` ไม่งั้นใช้ edge-tts ฟรี) แล้วเรนเดอร์เป็น `my-clips/<ชื่อ>/<ชื่อ>-25.mp4`
+- ทำเสียงด้วย `tools/voice.py` (ใช้ OpenRouter ถ้ามี `OPENROUTER_API_KEY` ใน `.env` ไม่งั้นใช้ edge-tts ฟรี) แล้วเรนเดอร์เป็น `my-clips/<ชื่อ>/<ชื่อ>-25.mp4`
 - ไม่เอาเสียงพากย์: `sh clip.sh my-clips/<ชื่อ> 25 --no-voice`
 - แก้บทแล้วอยากทำเสียงใหม่: ลบโฟลเดอร์ `my-clips/<ชื่อ>/voice` ก่อน แล้วรันใหม่
 - อยากได้หลายสไตล์จากบทเดียว: รัน `clip.sh` ซ้ำโดยเปลี่ยนเลขสไตล์ (เสียงใช้ของเดิม ไม่เสียเงินเพิ่ม)
@@ -147,4 +147,4 @@ node make.mjs --style 25 --story s.json --scene list --wide --out x.mp4  # ค�
 - "cannot run python3" หรือ import error ใน `mix50.py` → รัน `sh setup.sh`
 - "needs ffmpeg 7 or newer" → `brew install ffmpeg` (Mac)
 - "unknown style" → `node make.mjs --list`
-- ElevenLabs 401 = key ผิด · 402 = เครดิตหมด (ใช้ `python3 tools/voice.py my-clips/<ชื่อ> --provider edge` แทนได้)
+- OpenRouter 401 = key ผิด · 402 = เครดิตหมด (ใช้ `python3 tools/voice.py my-clips/<ชื่อ> --provider edge` แทนได้)
