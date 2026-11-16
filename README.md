@@ -46,7 +46,7 @@
 
 ```bash
 cd ~/Documents
-git clone <ลิงก์ของ repo นี้>
+git clone https://github.com/gobank01/thai-motion-clips.git
 cd thai-motion-clips
 ```
 (หรือกดปุ่มสีเขียว **Code → Download ZIP** บนหน้า GitHub แล้วแตกไฟล์ไว้ใน Documents จากนั้น `cd ~/Documents/thai-motion-clips`)
