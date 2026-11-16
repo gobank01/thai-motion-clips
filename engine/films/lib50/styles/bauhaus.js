@@ -1,0 +1,17 @@
+// เบาเฮาส์ — primary circles, quarter arcs, triangles on cream; geometric composition
+import { W, H, T, TW, G, F, en, ia, tex, grainTex, speckTex, rough, vig, rr, grad, ln, tick, star, scan, typed, seg, eo, eio, back, clamp, lerp, mulberry, pop, TAU } from '../sk.js';
+const BG = '#f1e9d8', K = '#161616', R = '#e03a2f', B = '#1f4fb4', Y = '#f2b61b', gr = grainTex(51, 30000, ['rgba(0,0,0,.05)', 'rgba(255,255,255,.07)'], 2);
+const circ = (ctx, x, y, r, c, p) => { if (p <= 0) return; ctx.fillStyle = c; ctx.beginPath(); ctx.arc(x, y, r * back(clamp(p)), 0, TAU); ctx.fill(); };
+const quart = (ctx, x, y, r, a0, c, p) => { if (p <= 0) return; ctx.fillStyle = c; ctx.beginPath(); ctx.moveTo(x, y); ctx.arc(x, y, r, a0, a0 + Math.PI / 2 * eo(clamp(p))); ctx.fill(); };
+const tri = (ctx, x, y, s, c, p, rot = 0) => { if (p <= 0) return; ctx.save(); ctx.translate(x, y); ctx.rotate(rot + (1 - eo(clamp(p))) * 1.2); ctx.scale(eo(clamp(p)), eo(clamp(p))); ctx.fillStyle = c; ctx.beginPath(); ctx.moveTo(0, -s); ctx.lineTo(s, s * .8); ctx.lineTo(-s, s * .8); ctx.fill(); ctx.restore(); };
+const bar = (ctx, x, y, w, h, c, p) => { ctx.fillStyle = c; ctx.fillRect(x, y, w * eio(clamp(p)), h); };
+export default { name: 'bauhaus', th: 'เบาเฮาส์', fonts: ['700 80px Bai', '500 80px Bai'], music: { bpm: 112, prog: 'major', lead: 'mallet', arp: [0, 3, 1, 2, 0, 2, 3, 1], bass: 'bass', drums: 'kb', lead_v: .5 }, sfx: { item: 'block', hit: 'thump', win: 'ding' },
+  sub: { font: '700 50px Bai', size: 50, color: BG, bg: K, radius: 0 },
+  bg: ctx => { ctx.fillStyle = BG; ctx.fillRect(0, 0, W, H); },
+  hook: (ctx, S) => { const h = S.story.hook; quart(ctx, 0, 220, 520, 0, B, seg(S.lt, 0, .5)); circ(ctx, 860, 430, 170, R, seg(S.lt, .15, .6)); tri(ctx, 900, 1220, 130, Y, seg(S.lt, .3, .8), .3); bar(ctx, 80, 640, 920, 14, K, seg(S.lt, .2, .7));
+    T(ctx, h[0], 80, 760, { f: F('Bai', 86), c: K, a: 'left', al: en(S, .3), max: 900 }); T(ctx, h[1], 80, 890, { f: F('Bai', 104), c: K, a: 'left', al: en(S, .7), max: 900 }); bar(ctx, 80, 980, 760, 250, R, seg(S.lt, 1.1, 1.4)); T(ctx, h[2], 110, 1110, { f: F('Bai', 190), c: BG, a: 'left', al: en(S, 1.25, .2), max: 700 }); },
+  list: (ctx, S) => { const l = S.story.list; circ(ctx, 200, 380, 130, Y, seg(S.lt, 0, .4)); T(ctx, l.title, 380, 380, { f: F('Bai', 124), c: K, a: 'left', al: en(S, .1), max: 620 }); bar(ctx, 80, 540, 920, 14, K, seg(S.lt, .1, .6));
+    l.items.forEach((s, i) => { const p = seg(S.items[i], 0, .4), y = 720 + i * 210; if (p <= 0) return; [() => circ(ctx, 180, y, 80, R, p), () => { ctx.fillStyle = B; const k = back(clamp(p)); ctx.fillRect(180 - 80 * k, y - 80 * k, 160 * k, 160 * k); }, () => tri(ctx, 180, y, 90, Y, p)][i](); T(ctx, String(i + 1), 180, y + 6, { f: F('Bai', 80), c: i === 2 ? K : BG, al: p }); T(ctx, s, 320, y, { f: F('Bai', 92), c: K, a: 'left', al: eo(p), max: 660 }); }); },
+  stat: (ctx, S) => { const s = S.story.stat; T(ctx, s.label, 80, 330, { f: F('Bai', 70), c: K, a: 'left', al: en(S, .1), max: 900 }); bar(ctx, 80, 400, 920, 14, K, seg(S.lt, .1, .6)); circ(ctx, 470, 830, 380, B, seg(S.statAge, -.4, .1)); quart(ctx, 1080, 1240, 330, Math.PI, Y, seg(S.statAge, -.2, .3)); T(ctx, S.N, 470, 840, { f: F('Bai', 560), c: BG, al: eo(seg(S.statAge, -.1, .15)) });
+    T(ctx, s.unit, 900, 520, { f: F('Bai', 84), c: R, al: eo(seg(S.statAge, .3, .6)), max: 300 }); bar(ctx, 80, 1270, 520, 110, R, seg(S.endAge, 0, .3)); T(ctx, S.story.end, 110, 1328, { f: F('Bai', 58), c: BG, a: 'left', al: eo(seg(S.endAge, .1, .3)), max: 470 }); },
+  post: ctx => ctx.drawImage(gr, 0, 0) };

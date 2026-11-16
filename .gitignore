@@ -1,0 +1,12 @@
+.env
+my-clips/*
+!my-clips/.gitkeep
+out/
+engine/node_modules/
+engine/.venv/
+engine/films/lib50/out/
+__pycache__/
+*.pyc
+.DS_Store
+examples/*/*.mp4
+examples/*/*.jpg
