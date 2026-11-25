@@ -1,0 +1,43 @@
+{"title":"กาแฟถูกค้นพบเพราะแพะ",
+"cover":"[กาแฟ] ถูกค้นพบ เพราะ[แพะ]",
+"images":{
+ "hills":"Green misty hills of ancient Ethiopia with a young goat herder seen from behind and a few goats, morning light.",
+ "berries":"Close-up of bright red coffee cherries on a coffee plant branch, morning dew, shallow depth of field.",
+ "goats":"Happy goats jumping and playing on a grassy hillside, energetic, sunny.",
+ "monk":"An old stone monastery room lit by a candle at night, a wooden table with a clay cup, no people.",
+ "cafe":"A cozy modern cafe counter with a cup of black coffee and steam rising, warm light, no people."},
+"lines":[
+ "รู้ไหมครับ... กาแฟที่เราดื่มทุกเช้า เล่ากันว่าถูกค้นพบเพราะแพะ",
+ "ราวพันกว่าปีก่อน ในเอธิโอเปีย มีคนเลี้ยงแพะชื่อ คาลดี",
+ "วันหนึ่งเขาเห็นแพะกระโดดโลดเต้น ไม่ยอมนอนทั้งคืน",
+ "หลังจากแพะไปกินผลไม้สีแดง จากต้นไม้ต้นหนึ่ง",
+ "คาลดีเอาผลไม้นั้นไปให้นักบวช นักบวชคิดว่าเป็นของไม่ดี เลยโยนเข้ากองไฟ",
+ "แต่กลิ่นหอมที่ลอยออกมา ทำให้ทุกคนหยุดมอง",
+ "พวกเขาเอาเมล็ดที่คั่วแล้ว ไปต้มกับน้ำร้อน... และนั่งสวดมนต์ได้ทั้งคืนโดยไม่ง่วง",
+ "จากเรื่องเล่าเล็กๆ วันนี้กาแฟคือเครื่องดื่มที่คนทั้งโลกขาดไม่ได้",
+ "บางครั้ง... สิ่งยิ่งใหญ่ ก็เริ่มจากการสังเกตเรื่องเล็กๆ"],
+"long":[1,4,7,8],
+"scenes":[
+ {"from":0,"bg":"img:berries","items":[
+  {"bub":"รู้ไหม? กาแฟถูกค้นพบเพราะแพะ","cls":"q","y":300,"at":0.35,"punch":true}]},
+ {"from":1,"bg":"img:hills","items":[
+  {"big":"1,000+","cls":"c","y":250,"size":180,"at":[1,"พันกว่าปี"]},
+  {"torn":"เอธิโอเปีย · คาลดี คนเลี้ยงแพะ","cls":"y","y":1450,"size":60,"rot":-2,"at":[1,"คาลดี"],"punch":true}]},
+ {"from":2,"bg":"img:goats","items":[
+  {"torn":"กระโดดโลดเต้น","cls":"w","x":100,"y":280,"size":76,"rot":-3,"at":[2,"กระโดด"]},
+  {"stamp":"ไม่ยอมนอน","x":140,"y":1300,"size":100,"rot":-8,"at":[2,"ไม่ยอมนอน"],"shake":true}]},
+ {"from":3,"bg":"wood","items":[
+  {"pol":"berries","x":200,"y":420,"w":680,"h":820,"cap":"ผลไม้สีแดง","rot":-3,"at":[3,"ผลไม้"],"punch":true}]},
+ {"from":4,"bg":"img:monk","items":[
+  {"torn":"ของไม่ดี?","cls":"w","x":80,"y":260,"size":72,"rot":-2,"at":[4,"ของไม่ดี"]},
+  {"stamp":"โยนเข้ากองไฟ","x":80,"y":1250,"size":96,"rot":-6,"boom":true,"at":[4,"กองไฟ"],"shake":true}]},
+ {"from":5,"bg":"img:monk","items":[
+  {"torn":"กลิ่นหอม","cls":"y","y":1450,"size":80,"rot":2,"at":[5,"กลิ่นหอม"],"punch":true}]},
+ {"from":6,"bg":"img:cafe","items":[
+  {"torn":"คั่ว → ต้ม → ดื่ม","cls":"w","x":100,"y":280,"size":72,"rot":-2,"at":[6,"คั่ว"]},
+  {"torn":"สวดมนต์ได้ทั้งคืน","cls":"y","y":1450,"size":66,"rot":-2,"at":[6,"สวดมนต์"],"punch":true}]},
+ {"from":7,"bg":"img:cafe","items":[
+  {"stamp":"ทั้งโลกขาดไม่ได้","x":60,"y":900,"size":92,"rot":-8,"at":[7,"ทั้งโลก"],"boom":true}]},
+ {"from":8,"bg":"paper","items":[
+  {"card":["สิ่งยิ่งใหญ่","เริ่มจาก<em>การสังเกตเรื่องเล็กๆ</em>"],"at2":[8,"สังเกต"]}]}
+]}

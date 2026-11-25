@@ -10,3 +10,13 @@ __pycache__/
 .DS_Store
 examples/*/*.mp4
 examples/*/*.jpg
+scrapbook/assets/*.png
+scrapbook/sounds/
+characters/*.png
+examples/*/assets/
+examples/*/audio/
+examples/*/index.html
+examples/*/spec.js
+examples/*/engine.*
+examples/*/audio.wav
+examples/*/cover.png
